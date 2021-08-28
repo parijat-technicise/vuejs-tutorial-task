@@ -1,4 +1,4 @@
-# vuejs-tutorial-ask
+# vue-tutorial-app-ts
 
 ## Project setup
 ```
