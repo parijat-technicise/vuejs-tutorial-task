@@ -1,10 +1,6 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
+  <!-- <v-app>
+    <v-app-bar app color="primary" dark>
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
@@ -37,25 +33,23 @@
       </v-btn>
     </v-app-bar>
 
+    
+  </v-app> -->
+  <v-app>
     <v-main>
-      <HelloWorld/>
+      <router-view />
     </v-main>
   </v-app>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+import Vue from "vue";
 
 export default Vue.extend({
-  name: 'App',
-
-  components: {
-    HelloWorld
-  },
+  name: "App",
 
   data: () => ({
     //
-  })
-})
+  }),
+});
 </script>
