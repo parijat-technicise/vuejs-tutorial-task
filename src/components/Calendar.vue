@@ -6,8 +6,8 @@
           ref="calendar"
           :now="today"
           :value="today"
-          :events="events"
-          color="primary" 
+          :events="event"
+          color="primary"
           type="week"
         ></v-calendar>
       </v-sheet>
@@ -15,38 +15,40 @@
   </v-row>
 </template>
 
-<script>
+<script lang='ts'>
+import { EventObject } from "../Model";
 export default {
-  data: (vm) => ({
+  data: () => ({
     // props: { updateEventData: [] },
-    today: vm.formatDate(
+    date: new Date(),
+    today: this.date.formatDate(
       new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
         .toISOString()
         .substr(0, 10)
     ),
-    events: [
-      {
-        name: "Weekly Meeting",
-        start: "2019-01-07 09:00",
-        end: "2019-01-07 10:00",
-      },
-      {
-        name: `Thomas' Birthday`,
-        start: "2019-01-10",
-      },
-      {
-        name: "Mash Potatoes",
-        start: "2019-01-09 12:30",
-        end: "2019-01-09 15:30",
-      },
-    ],
+    // events: [
+    //   {
+    //     name: "Weekly Meeting",
+    //     start: "2021-09-01 09:00",
+    //     end: "2021-09-01 10:00",
+    //   },
+    //   {
+    //     name: `Thomas' Birthday`,
+    //     start: "2019-01-10",
+    //   },
+    //   {
+    //     name: "Mash Potatoes",
+    //     start: "2019-01-09 12:30",
+    //     end: "2019-01-09 15:30",
+    //   },
+    // ],
+    props: { event: [] as EventObject[] },
   }),
   mounted() {
     this.$refs.calendar.scrollToTime("08:00");
   },
 };
 </script>
-
 
 <style scoped>
 .my-event {

@@ -3,9 +3,9 @@
     <v-row>
       <v-col cols="12" md="6">
         <p>
-          Events: <strong>{{ objectsvalue }}</strong>
+          Events: <strong>{{ objects.length }}</strong>
         </p>
-        <v-textarea outlined name="input-7-4" label=""></v-textarea>
+        <label>{{objects}}</label>
       </v-col>
     </v-row>
   </v-container>
@@ -18,14 +18,15 @@ export default {
   name: "Output",
   data: function () {
     return {
-      eventOutPutArray: [] as EventObject[],
+      formatedObject: "",
     };
   },
-  props: { objects: [] },
-  // methods: {
-  //   updateEvent(objects: EventObject) {
-  //     this.updateEventData.push(objects);
-  //   },
-  // },
+  props: { objects: [] as EventObject[] },
+  
+  watch: {
+    convertObject(objects:any) {
+      let formatedObject = objects.tostring();
+    },
+  },
 };
 </script>
