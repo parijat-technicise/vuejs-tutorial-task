@@ -1,16 +1,16 @@
 <template>
-  <hello-world />
+  <Parent />
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import HelloWorld from "../components/HelloWorld.vue";
+import Parent from "../components/Parent.vue";
 
 export default Vue.extend({
   name: "Home",
 
   components: {
-    HelloWorld,
+    Parent,
   },
 });
 </script>

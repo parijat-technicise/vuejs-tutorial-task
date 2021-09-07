@@ -25,7 +25,7 @@ import Output from "../components/Output.vue";
 import { EventObject } from "../Model";
 
 export default Vue.extend({
-  name: "HelloWorld",
+  name: "Parent",
 
   components: {
     Form,
