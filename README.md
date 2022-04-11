@@ -1,4 +1,4 @@
-# vue-tutorial-app-ts
+# tsproject
 
 ## Project setup
 ```
