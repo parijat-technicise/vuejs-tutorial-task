@@ -25,6 +25,7 @@
                   placeholder="Enter your email or phone number"
                   required
                   outlined
+                  v-on:keyup.enter="userLogin"
                 ></v-text-field>
                 <v-text-field
                   v-model="password"
@@ -36,6 +37,7 @@
                   :append-icon="value ? 'mdi-eye' : 'mdi-eye-off'"
                   :type="value ? 'text' : 'password'"
                   @click:append="value = !value"
+                  v-on:keyup.enter="userLogin"
                 ></v-text-field>
                 <v-btn @click="userLogin" block color="primary">Log in</v-btn>
               </v-container>
