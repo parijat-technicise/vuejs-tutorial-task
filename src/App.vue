@@ -1,12 +1,6 @@
 <template>
   <v-app>
-    <div id="app">
-      <nav>
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
-      </nav>
-      <router-view />
-    </div>
+    <router-view :key="$route.fullPath"></router-view>
   </v-app>
 </template>
 
